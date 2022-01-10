@@ -1,0 +1,178 @@
+
+<section class="banner-section text-white pb-0">
+	<div class="container">
+		  <div class="row">
+			 <div class="col-sm-6">
+				<h1>Launch Meal Deal</h1>
+				<ul class="banner-bullet mt-4 mb-4">
+				   <li>Main</li>
+				   <li class="bullet-lus">+</li>
+				   <li>Drink</li>
+				   <li class="bullet-lus">+</li>
+				   <li>Snack</li>
+				</ul>
+				<a href="#" class="btn btn-primary">TAP HERE TO START</a>
+			 </div>
+			 <div class="col-sm-6">
+				<img src="../../app/assets/images/banner-product.png">
+			 </div>
+		  </div>
+	</div>
+ </section>
+ <section class="tabbing-section gray-bg" ng-controller="Product_tab">
+	<div class="container">
+	   <div class="row">
+		  <div class="col-sm-12" >
+			  <ul class="nav nav-pills mb-3" id="product-tab" role="tablist">
+				<li ng-repeat="tab in tablist">
+					<a
+					class="{{selected_category === tab.name ? 'nav-link active' : 'nav-link'}}"
+						id="product-all-tab"
+						data-toggle="pill"
+						role="tab"
+						aria-controls="product-all"
+						aria-selected="true"
+						ng-click="product_filter(tab.name)"
+						>{{tab.name}}</a>
+				</li>
+			  </ul>
+			  <a href="/#!/order">
+			  <div class="basket-cart-block text-white">
+				 <h2>£ {{cart_val}} <img src="../../app/assets/images/cart-basket.svg"></h2>
+				 <h5 class="text-center">Tap to check out</h5>
+			  </div>
+			  </a>
+			  <div class="tab-content" id="product-tabContent">
+				<div class="tab-pane fade show active" id="product-all" role="tabpanel" aria-labelledby="product-all-tab">
+				   <div class="product-filter-block mt-4">
+					  <div class="accordion" id="accordionExample">
+						   <div id="headingOne">
+							   <button class="btn btn-toggle pl-0 mb-3" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								  Filter products <i class="fa fa-angle-down"></i>
+							   </button>
+						   </div>
+						   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+							   <ul class="filter-list">
+								  <li><img src="../../app/assets/images/product-vegetarian.svg"> Vegetarian</li>
+								  <li><img src="../../app/assets/images/product-vegan.svg"> Vegan</li>
+								  <li><img src="../../app/assets/images/product-gluten-free.svg"> Gluten free</li>
+								  <li class="border-0"> Clear all filters</li>
+							   </ul>
+						   </div>
+					   </div>
+				   </div>
+				</div>
+				<div class="tab-pane fade" id="product-mains" role="tabpanel" aria-labelledby="product-mains-tab">.2.</div>
+				<div class="tab-pane fade" id="product-snacks" role="tabpanel" aria-labelledby="product-snacks-tab">.3</div>
+				<div class="tab-pane fade" id="product-drinks" role="tabpanel" aria-labelledby="product-drinks-tab">.4</div>
+				<div class="tab-pane fade" id="product-othersnacks" role="tabpanel" aria-labelledby="product-othersnacks-tab">.5</div>
+			  </div>
+		  </div>
+	   </div>
+
+	   <div class="product-category-block mt-4" >
+			<div class="row" >
+				<div class="col-sm-3"  ng-repeat="product in filter_product_list | filter : (selected_category == 'All products' ? '' : {'category' : (selected_category)})">
+					<div class="card border-0"> 
+						<div data-toggle="modal" data-target="#exampleModal{{product.id}}">
+							<img src="../../app/assets/images/{{product.product_img}}" class="card-img-top" alt="...">
+						</div>
+						<div class="card-body">
+							<p class="card-text mb-0">{{product.name}}</p>
+							<h5 class="card-title mb-0">£{{product.price}}</h5>
+						</div>
+						<div class="product-symbol">
+							<img src="../../app/assets/images/{{product.top_img}}">
+						</div>
+						<div class="card-footer"  ng-click="add_to_cart(product.id,product.name,product.price,product.product_img)">
+							Add to basket <span> + </span>
+						</div>
+					</div>
+					<div class="modal fade product-model-block" id="exampleModal{{product.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+						  <div class="modal-content">
+							<div class="modal-header border-0">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								   Close <span aria-hidden="true" class="ml-3"><img src="../../app/assets/images/close-icon.svg"></span>
+								</button>
+							  </div>
+							  <div class="modal-body text-center">
+								<img src="../../app/assets/images/{{product.product_img}}">
+							  </div>
+							  <div class="modal-footer gray-bg rounded-bottom border-0 d-block">
+								<div class="product-name-price mb-4">
+									{{product.name}} <span class="float-right">£2.99</span>
+								</div>
+								<p class="footer-text">Your chioce of chicken, egg, roast tomatoes and sweet <br /> potato with casesar dressing</p>
+								<button type="button" class="btn btn-primary border-0 mt-3"  ng-click="add_to_cart(product.id,product.name,product.price,product.product_img)">
+									<span>+</span> Add to basket
+								</button>
+					   
+								<div class="media bg-white mt-5 p-4 rounded">
+								   <div class="price-tag">£</div>
+								   <div class="media-body ml-4">
+									  <h5 class="mt-0">Meal deal</h5>
+									  <span>Pick a main, side and drink for {{product.meal_deal}}</span>
+								   </div>
+								</div>
+					   
+								<div class="row mt-5">
+								   <div class="col-sm-6">
+									  <h4 class="mb-4">Nutritional information</h4>
+									  <table class="table">
+										 <tbody>
+										   <tr>
+											 <td>Energy (kcal)</td>
+											 <td>{{product.energy_kcal}}</td>
+										   </tr>
+										   <tr>
+											<td>Fats</td>
+											<td>{{product.fats}}</td>
+										  </tr>
+										  <tr>
+											<td>of which saturates</td>
+											<td>{{product.saturates}}</td>
+										  </tr>
+										  <tr>
+											<td>Proteins</td>
+											<td>{{product.proteins}}</td>
+										  </tr>
+										  <tr>
+											<td>Salt</td>
+											<td>{{product.salt}}</td>
+										  </tr>
+										  <tr>
+											<td>Energy (kj)</td>
+											<td>{{product.energy_kj}}</td>
+										  </tr>
+										  <tr>
+											<td>Carbs</td>
+											<td>{{product.carbs}}</td>
+										  </tr>
+					   
+										  <tr>
+											<td>of which sugars</td>
+											<td>{{product.sugars}}</td>
+										  </tr>
+										  <tr>
+											<td>Fibres</td>
+											<td>{{product.fibres}}</td>
+										  </tr>									 
+										 </tbody>
+									   </table>
+								   </div>
+								   <div class="col-sm-6">
+									  <h4 class="mb-4">Allergens</h4>
+									  <h4>{{product.discription}}</h4>
+								   </div>
+								</div>
+							  </div>
+						  </div>
+						</div>
+					  </div>
+				</div>
+			</div>
+	   </div>
+	</div>	
+ </section>  
+ 

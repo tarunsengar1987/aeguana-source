@@ -1,0 +1,56 @@
+<section class="gray-bg">
+    <div class="container" ng-controller="Product_checkout">       
+       <div class="order-summery-block bg-white rounded p-5">
+           <!-- <div ng-repeat="order in checkout_order"> -->
+          <h2>Order summary</h2>
+          <ul class="order-list mt-4 border-bottom pb-4" ng-repeat="order in checkout_order">
+                <li><img src="../../app/assets/images/{{order.image}}" class="img-fluid"></li>
+                <li class="order-list-detail">{{order.name}}</li>
+                <li>
+                <div class="product-qty">
+                <ul>
+                    <li ng-click="remove_qty(order.id, order.quantity,order.price)">-</li>
+                    <li class="number">{{order.quantity}}</li>
+                    <li ng-click="add_qty(order.id, order.quantity, order.price)">+</li>
+                </ul>
+                </div>
+            </li>
+            <li class="order-list-price">£{{order.price}}</li>
+          </ul>
+          <div class="order-discount-voucher mt-5">
+             <div class="row">
+                <div class="col-sm-6">
+                   <button type="button" class="btn btn-outline-primary mb-3">Add discount voucher</button>
+                   <a href="" class="link">or scan a code below </a>
+                </div>
+                <div class="col-sm-6 text-center">
+                   <h3 class="text-danger">Discounts <span>-£0.90</span> </h3>
+                   <h3 class="text-black">Total <span>£{{cart_total}}</span> </h3>
+                </div>
+             </div>
+             <div class="row mt-5">
+                <div class="col-sm-6 offset-lg-6">
+                   <button type="button" class="btn btn-outline-primary mb-3">Email receipt</button>
+                   <button type="button" class="btn btn-primary border-0 mt-3 w-100 py-4">Confirm & Pay</button>
+                </div>
+             </div>
+             <div class="row mt-5">
+                <div class="col-sm-6 d-flex align-items-end">
+                   <a href="/#!/home" class="btn-back">
+                      <img src="../../app/assets/images/back-icon.png" class="mr-3"> Back
+                   </a>
+                </div>
+                <div class="col-sm-6 text-right">
+                   <p class="mb-4">We accept contacless payments</p>
+                   <ul class="payments-card mb-0">
+                      <li><a href="#"><img src="../../app/assets/images/visa.png"></a></li>
+                      <li><a href="#"><img src="../../app/assets/images/master-card.png"></a></li>
+                      <li><a href="#"><img src="../../app/assets/images/google-play.png"></a></li>
+                      <li><a href="#"><img src="../../app/assets/images/ios-play.png"></a></li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>       
+    </div>
+ </section>

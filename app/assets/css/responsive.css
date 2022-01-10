@@ -1,0 +1,94 @@
+/* SMall Desktop*/
+@media screen and (min-width:1200px) and (max-width:1600px){
+
+
+
+}
+
+
+
+/*iPad Landscape */
+@media screen and (min-width:768px) and (max-width:1199px){
+  .basket-cart-block {
+    right: 15%;
+  }
+  .order-summery-block ul.order-list li {
+    padding: 0 20px;
+  }    
+     
+}
+
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 44px;
+    line-height: 50px;
+  }
+  .navbar-light .navbar-brand {
+    width: 80px;
+}
+  .scaner-block h3 span {
+    font-size: 13px;
+  }
+  .scaner-block h3 {
+    width: 60%;
+  }
+  .scanner-item {
+    margin-left: 0 !important;
+}    
+.banner-section .btn {
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.basket-cart-block {
+  position: unset;
+  text-align: center;
+}
+.tabbing-section .nav-pills .nav-link {
+  padding: 8px 10px;
+  margin-right: 8px;
+  margin-bottom: 10px;
+}
+ul.filter-list li {
+  margin-bottom: 10px;
+}
+
+.product-category-block .card {
+  margin-bottom: 20px;
+}
+ul.banner-bullet li.bullet-lus {
+  font-size: 24px;
+}
+ul.banner-bullet li {
+  padding: 3px;
+}
+.product-model-block .modal-footer {
+  padding: 50px 20px;
+}
+.order-summery-block ul.order-list li {
+  display: block;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+}
+.order-summery-block ul.order-list li.order-list-detail {
+  width: 100%;
+}
+.order-discount-voucher h3 {
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+ul.payments-card li {
+  padding: 15px;
+}
+
+
+}
+
+
+@media only screen and (max-width: 466px) {
+
+
+}
+

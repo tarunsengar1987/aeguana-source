@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <meta name="description" content="">
+	  <meta name="theme-color" content="#0E8482">
+	  <meta name="author" content="Co-op-revision">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <title>Co-op-revision</title>
+	  <link rel="icon" href="app/assets/images/favicon.ico">
+	  <link href="app/assets/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="app/assets/css/custom.css" rel="stylesheet">
+	  <link href="app/assets/css/responsive.css" rel="stylesheet">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <script type="text/javascript" src="./node_modules/angular/angular.js"></script>
+	  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
+	  <script type="text/javascript" src="./main.js"></script>
+	</head>
+	<body>
+	  <!-- <div > -->
+		<main role="main" class="wrapper mainTitle" ng-app="mainApp">
+		<div ng-controller="HeaderCtrl">
+			<div ng-include src="header.url"></div>
+			<script type="text/ng-template" id="header.html"></script>
+		  </div>
+		<ng-view></ng-view>
+	    </main>
+	  <!-- </div> -->
+	</body>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="app/assets/js/bootstrap.min.js"></script>
+</html>
